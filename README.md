@@ -1,0 +1,2 @@
+# Django Applications
+ Django Assignment
