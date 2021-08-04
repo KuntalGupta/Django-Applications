@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1 class="ui center aligned header" style="margin-top: 50px; font-size: 40px;">Blogger: {{blogger}}</h1>
+    
+    <h3 style="font-size: 30px; margin-top: 40px">Bio</h3>
+    
+    <p style="font-size:25px ;margin-left: 20px">{{blogger.bio}}</p>
+    
+    
+
+    {% if blog_list %}
+    <h3 style="font-size: 25px">Blogs list</h3>
+    <ul>
+
+      {% for blog in blog_list %}
+      <li style="font-size: 15px">
+        <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{blog.post_date}})</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>This blogger hasn't posted anything yet.</p>
+    {% endif %}       
+{% endblock %}
+
